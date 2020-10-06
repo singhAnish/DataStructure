@@ -2,18 +2,16 @@ package slidingwindow;
 
 import java.util.HashSet;
 
-
 //Space Complexity : O(n)
 //Time Complexity : O(n)
 public class LongestSubstringNonRepeated {
 
 	public static void main(String[] args) {
-		String input = "abcabcd";
+		String input = "BADBDEFGABEF";
 		System.out.println("Lonest Substring length is : " + lengthOfLongestSubstring(input));
 	}
 
 	private static int lengthOfLongestSubstring(String s) {
-
 		int start = 0;
 		int end = 0;
 		int max = 0;

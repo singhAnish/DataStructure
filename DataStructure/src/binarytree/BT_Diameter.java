@@ -2,32 +2,37 @@ package binarytree;
 
 import util.Pair;
 
+// Time Complexity O(n)
 public class BT_Diameter {
 
 	public static void main(String[] args) {
 		BaseTree baseTree = new BaseTree();
 		Node<Integer> root = baseTree.createTree();
-		
+
 		System.out.println("Diameter of tree : \t" + diameterOfBinaryTree(root));
 	}
 
+	// Time Complexity : O(n^2)
+	// If complete binary tree O(n*log(n) else if all node are are one side then O(n^2)
+	public static int diameterSimpleRecursion(Node<Integer> root) {
+		if (root == null) {
+			return 0;
+		}
+
+		int solution1 = BaseTree.maxDepth(root.left) + BaseTree.maxDepth(root.right);
+		int solution2 = diameterSimpleRecursion(root.left);
+		int solution3 = diameterSimpleRecursion(root.right);
+		return Math.max(solution1, Math.max(solution2, solution3));
+	}
+
+	// Time Complexity : O(n)
 	public static int diameterOfBinaryTree(Node<Integer> root) {
 		if (root == null) {
 			return 0;
 		}
 
-		/** Complexit O(n*h) **/
-		/*
-		 * int solution1 = maxDepth(root.left) + maxDepth(root.right); 
-		 * int solution2 = diameterOfBinaryTree(root.left);
-		 * int solution3 = diameterOfBinaryTree(root.right); 
-		 * return Math.max(solution1,Math.max(solution2, solution3));
-		 */
-
-		/** Complexity O(n) **/
 		Pair<Integer, Integer> output = getHeightDiameter(root);
 		return output.value;
-
 	}
 
 	private static Pair<Integer, Integer> getHeightDiameter(Node<Integer> root) {

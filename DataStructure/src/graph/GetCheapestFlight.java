@@ -7,6 +7,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 
+/*
+ * There are n cities connected by m flights. Each flight starts from city u and arrives at v with a price w.
+ * Now given all the cities and flights, together with starting city src and the destination dst.
+ * your task is to find the cheapest price from src to dst 
+ * with up to k stops. If there is no such route, output -1
+ * */
 public class GetCheapestFlight {
 
 	public static void main(String[] args) {
@@ -17,8 +23,8 @@ public class GetCheapestFlight {
 		int stopCount = 1;
 
 		int cheapestFlight = findCheapestPrice(flights.length, flights, src, dest, stopCount);
-		
-		System.out.println("Cost : "+ cheapestFlight);
+
+		System.out.println("Cost : " + cheapestFlight);
 	}
 
 	private static int findCheapestPrice(int n, int[][] flights, int src, int dst, int stopCount) {
@@ -42,7 +48,7 @@ public class GetCheapestFlight {
 		PriorityQueue<DestinationCost> queue = new PriorityQueue<>(new Comparator<DestinationCost>() {
 			@Override
 			public int compare(DestinationCost o1, DestinationCost o2) {
-				return Integer.compare(o1.cost, o2.cost);
+				return o1.cost - o2.cost;
 			}
 		});
 
@@ -57,12 +63,13 @@ public class GetCheapestFlight {
 			if (costObj.stopCount >= 0) {
 				if (map.containsKey(costObj.src)) {
 					for (Flight flight : map.get(costObj.src)) {
-						queue.offer(new DestinationCost(flight.dest, costObj.cost + flight.cost, costObj.stopCount - 1));
+						queue.offer(
+								new DestinationCost(flight.dest, costObj.cost + flight.cost, costObj.stopCount - 1));
 					}
 				}
 			}
 		}
-		
+
 		return -1;
 	}
 

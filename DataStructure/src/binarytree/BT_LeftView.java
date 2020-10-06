@@ -11,7 +11,6 @@ public class BT_LeftView {
 
 	public static void main(String[] args) {
 		BaseTree baseTree = new BaseTree();
-
 		Node<Integer> root = baseTree.createTree();
 		
 		List<Integer> list = leftSideViewRecursive(root);

@@ -1,6 +1,9 @@
-package binarytree;
+package binarysearchtree;
 
-public class BT_FromPreOrder {
+import binarytree.Node;
+import binarytree.TreePrinter;
+
+public class BST_Construct_From_PreOrder {
 
 	public static void main(String[] args) {
 
