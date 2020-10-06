@@ -1,16 +1,13 @@
 package binarytree;
 
-import java.util.Scanner;
-
 import util.Pair;
 
 public class BT_Diameter {
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		BaseTree baseTree = new BaseTree(scanner);
-
+		BaseTree baseTree = new BaseTree();
 		Node<Integer> root = baseTree.createTree();
+		
 		System.out.println("Diameter of tree : \t" + diameterOfBinaryTree(root));
 	}
 
@@ -21,10 +18,10 @@ public class BT_Diameter {
 
 		/** Complexit O(n*h) **/
 		/*
-		 * int solution1 = maxDepth(root.left) + maxDepth(root.right); int solution2 =
-		 * diameterOfBinaryTree(root.left); int solution3 =
-		 * diameterOfBinaryTree(root.right); return
-		 * Math.max(solution1,Math.max(solution2, solution3));
+		 * int solution1 = maxDepth(root.left) + maxDepth(root.right); 
+		 * int solution2 = diameterOfBinaryTree(root.left);
+		 * int solution3 = diameterOfBinaryTree(root.right); 
+		 * return Math.max(solution1,Math.max(solution2, solution3));
 		 */
 
 		/** Complexity O(n) **/

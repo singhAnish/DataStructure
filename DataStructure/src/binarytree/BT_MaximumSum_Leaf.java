@@ -1,21 +1,22 @@
 package binarytree;
 
-import java.util.Scanner;
 
 public class BT_MaximumSum_Leaf {
 	
-	private static int maxSum = Integer.MIN_VALUE;
-
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		BaseTree baseTree = new BaseTree(scanner);
+		BaseTree baseTree = new BaseTree();
 		Node<Integer> root = baseTree.createTree();
 		
 		System.out.println("Max pathSum  " + maxPathSum(root, root)); 
 	}
 
-	
-	
+    private static int maxPathSum(Node<Integer> root, Node<Integer> node)  { 
+        Res res = new Res(); 
+        res.val = Integer.MIN_VALUE; 
+        maxPathSumUtil(root, res); 
+        return res.val; 
+    } 
+    
 	private static int maxPathSumUtil(Node<Integer> node, Res res) { 
 		  
         if (node == null) 
@@ -34,18 +35,9 @@ public class BT_MaximumSum_Leaf {
   
         return (node.left == null) ? rs + node.value  : ls + node.value; 
     } 
-  
-    private static int maxPathSum(Node<Integer> root, Node<Integer> node)  { 
-        Res res = new Res(); 
-        res.val = Integer.MIN_VALUE; 
-        maxPathSumUtil(root, res); 
-        return res.val; 
-    } 
     
     
     static class Res { 
         int val; 
     } 
-	
-
 }

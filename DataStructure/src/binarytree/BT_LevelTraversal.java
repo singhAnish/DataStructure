@@ -2,17 +2,14 @@ package binarytree;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
 
 public class BT_LevelTraversal {
 	
 	
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		BaseTree baseTree = new BaseTree(scanner);
+		BaseTree baseTree = new BaseTree();
 
 		Node<Integer> root = baseTree.createTree();
-		
 		printLevelOrderTraversal(root);
 	}
 	

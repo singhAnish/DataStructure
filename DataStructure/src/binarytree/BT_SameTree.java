@@ -1,12 +1,9 @@
 package binarytree;
 
-import java.util.Scanner;
-
 public class BT_SameTree {
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		BaseTree baseTree = new BaseTree(scanner);
+		BaseTree baseTree = new BaseTree();
 
 		Node<Integer> p = baseTree.createTree();
 		Node<Integer> q = baseTree.createTree();

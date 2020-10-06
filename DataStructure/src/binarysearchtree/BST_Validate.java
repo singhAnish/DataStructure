@@ -1,19 +1,15 @@
 package binarysearchtree;
 
-import java.util.Scanner;
-
 import binarytree.BaseTree;
 import binarytree.Node;
 
 public class BST_Validate {
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		BaseTree baseTree = new BaseTree(scanner);
-
+		BaseTree baseTree = new BaseTree();
 		Node<Integer> root = baseTree.createTree();
-
-		System.out.println("Is Valid Binart Search Tree : \n" + isValidBST(root));
+		
+		System.out.println("Is Valid Binart Search Tree : \t" + isValidBST(root));
 	}
 
 	private static boolean isValidBST(Node<Integer> root) {

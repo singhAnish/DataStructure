@@ -1,20 +1,14 @@
 package binarysearchtree;
 
-import java.util.Scanner;
-
 import binarytree.BaseTree;
 import binarytree.Node;
 
 public class BST_InOrderSuccessor {
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		BaseTree baseTree = new BaseTree(scanner);
+		BaseTree baseTree = new BaseTree();
 		Node<Integer> root = baseTree.createTree();
-
-		System.out.print("Enter Number : \t");
-		int number = scanner.nextInt();
-		System.out.println("");
+		int number = baseTree.getNumber();
 
 		Node<Integer> node = getInorderSuccesor(root, number);
 		System.out.println("Inorder successor of " + number + "  :  \t" + node.value);

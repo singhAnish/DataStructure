@@ -6,8 +6,7 @@ public class BinaryTree {
 
 	public static void main(String[] args) {
 
-		Scanner scanner = new Scanner(System.in);
-		BaseTree baseTree = new BaseTree(scanner);
+		BaseTree baseTree = new BaseTree();
 
 		Node<Integer> root = baseTree.createTree();
 		TreePrinter.printNode(root);

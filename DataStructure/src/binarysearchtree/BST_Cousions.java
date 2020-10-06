@@ -1,14 +1,23 @@
 package binarysearchtree;
 
-import java.util.Scanner;
-
 import binarytree.BaseTree;
 import binarytree.Node;
 
 public class BST_Cousions {
+	
+	public static void main(String[] args) {
+		BaseTree baseTree = new BaseTree();
 
-	// Data structure to store a Binary Tree node along
-	// with its level and parent information
+		Node<Integer> root = baseTree.createTree();
+
+		if (iterative(root, 5, 6)) {
+			System.out.print("Given nodes are cousins");
+		} else {
+			System.out.print("Given nodes are not cousins");
+		}
+	}
+
+	// Data structure to store a Binary Tree node along with its level and parent information
 	static class NodeInfo {
 		int key;
 		int level;
@@ -23,7 +32,6 @@ public class BST_Cousions {
 
 	// Perform in-order traversal of the binary tree and update x and y
 	public static void inorder(Node<Integer> root, Node<Integer> parent, int level, NodeInfo x, NodeInfo y) {
-		// base case: tree is empty
 		if (root == null) {
 			return;
 		}
@@ -49,7 +57,6 @@ public class BST_Cousions {
 
 	// Function to determine if two given nodes are cousins of each other
 	public static boolean iterative(Node<Integer> root, int elem1, int elem2) {
-		// return if tree is empty
 		if (root == null) {
 			return false;
 		}
@@ -69,18 +76,5 @@ public class BST_Cousions {
 		}
 
 		return true;
-	}
-
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		BaseTree baseTree = new BaseTree(scanner);
-
-		Node<Integer> root = baseTree.createTree();
-
-		if (iterative(root, 5, 6)) {
-			System.out.print("Given nodes are cousins");
-		} else {
-			System.out.print("Given nodes are not cousins");
-		}
 	}
 }

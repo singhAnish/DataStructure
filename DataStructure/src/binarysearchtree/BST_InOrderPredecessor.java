@@ -9,12 +9,10 @@ public class BST_InOrderPredecessor {
 	
 	
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		BaseTree baseTree = new BaseTree(scanner);
+		BaseTree baseTree = new BaseTree();
 		Node<Integer> root = baseTree.createTree();
 
-		System.out.print("Enter Number : \t");
-		int number = scanner.nextInt();
+		int number =  baseTree.getNumber();
 		System.out.println("");
 
 		Node<Integer> node = getInorderPredecessor(root, number);

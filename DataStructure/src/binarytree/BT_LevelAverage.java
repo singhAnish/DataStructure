@@ -4,18 +4,14 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import java.util.Scanner;
 
 public class BT_LevelAverage {
 
 	public static void main(String[] args) {
-
-		Scanner scanner = new Scanner(System.in);
-		BaseTree baseTree = new BaseTree(scanner);
+		BaseTree baseTree = new BaseTree();
 
 		Node<Integer> root = baseTree.createTree();
 		System.out.println("Average  of tree : \t" + averageOfLevels(root));
-
 	}
 
 	public static List<Double> averageOfLevels(Node<Integer> root) {

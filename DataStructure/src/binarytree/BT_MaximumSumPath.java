@@ -1,14 +1,11 @@
 package binarytree;
 
-import java.util.Scanner;
-
 public class BT_MaximumSumPath {
 
 	private static int maxSum = Integer.MIN_VALUE;
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		BaseTree baseTree = new BaseTree(scanner);
+		BaseTree baseTree = new BaseTree();
 		Node<Integer> root = baseTree.createTree();
 		System.out.println("Maximum sum path : \t" + maxPathSum(root));
 	}

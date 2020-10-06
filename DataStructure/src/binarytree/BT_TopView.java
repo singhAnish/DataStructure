@@ -3,7 +3,6 @@ package binarytree;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
-import java.util.Scanner;
 import java.util.TreeMap;
 
 import util.Pair;
@@ -11,9 +10,7 @@ import util.Pair;
 public class BT_TopView {
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		BaseTree baseTree = new BaseTree(scanner);
-
+		BaseTree baseTree = new BaseTree();
 		Node<Integer> root = baseTree.createTree();
 		topView(root);
 	}

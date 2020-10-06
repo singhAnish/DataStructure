@@ -5,8 +5,13 @@ import java.util.Scanner;
 public class BaseTree {
 	private Scanner scanner;
 
-	public BaseTree(Scanner scanner) {
-		this.scanner = scanner;
+	public BaseTree() {
+		this.scanner = new Scanner(System.in);
+	}
+	
+	public  int getNumber() {
+		System.out.println("Enter Number : \t");
+		return scanner.nextInt();
 	}
 
 	// Create a tree

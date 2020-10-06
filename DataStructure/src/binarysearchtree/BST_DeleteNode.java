@@ -1,22 +1,17 @@
 package binarysearchtree;
 
-import java.util.Scanner;
-
 import binarytree.BaseTree;
 import binarytree.Node;
 
 public class BST_DeleteNode {
 	
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		BaseTree baseTree = new BaseTree(scanner);
+		BaseTree baseTree = new BaseTree();
 		Node<Integer> root = baseTree.createTree();
-		
-		int number = scanner.nextInt();
+		int number = baseTree.getNumber();
 		
 		Node<Integer> node = deleteNode(root, number);
-		baseTree.inOrderTraversal(node);
-		
+		BaseTree.inOrderTraversal(node);
 	}
 	
 	

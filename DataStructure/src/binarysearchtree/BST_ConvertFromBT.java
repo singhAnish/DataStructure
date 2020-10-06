@@ -11,8 +11,7 @@ import binarytree.Node;
 public class BST_ConvertFromBT {
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		BaseTree baseTree = new BaseTree(scanner);
+		BaseTree baseTree = new BaseTree();
 		Node<Integer> root = baseTree.createTree();
 
 		Set<Integer> set = new TreeSet<>();
@@ -23,16 +22,7 @@ public class BST_ConvertFromBT {
 		convertToBST(root, it);
 
 		// print the BST
-		inorder(root);
-	}
-
-	public static void inorder(Node<Integer> root) {
-		if (root == null) {
-			return;
-		}
-		inorder(root.left);
-		System.out.print(root.value + " ");
-		inorder(root.right);
+		BaseTree.inOrderTraversal(root);
 	}
 
 	public static void extractKeys(Node<Integer> root, Set<Integer> set) {
