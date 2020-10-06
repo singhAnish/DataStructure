@@ -1,10 +1,10 @@
-package recursion;
+package stack;
 
 import java.util.Stack;
 
 
 //Time Complexity : O(2^k)
-public class DeleteMiddleElementFromStack {
+public class DeleteMiddleElement_Stack {
 
 	public static void main(String[] args) {
 		Stack<Integer> stack = new Stack<>();

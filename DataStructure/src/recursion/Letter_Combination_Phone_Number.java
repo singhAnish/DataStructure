@@ -1,4 +1,4 @@
-package facebook;
+package recursion;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,7 +9,7 @@ import java.util.Map;
 //Time Complexity = O(3^N || 4^M)
 //Space Complexity = O(3^N || 4^M)
 
-public class LetterCombinationPhoneNumber {
+public class Letter_Combination_Phone_Number {
 	
 	public static void main(String[] args) {
 		String input = "23";

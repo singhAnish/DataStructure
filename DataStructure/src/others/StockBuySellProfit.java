@@ -1,4 +1,4 @@
-package facebook;
+package others;
 
 //Time Complexity : O(n)
 //Space Complexity : O(1)

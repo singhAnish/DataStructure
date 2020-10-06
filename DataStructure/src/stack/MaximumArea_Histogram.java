@@ -7,7 +7,7 @@ import util.Local;
 
 //TIme Complexity : O(n)
 //Space Complexity : O(n * 3) ~ O(n)
-public class MaximumAreaHistogram {
+public class MaximumArea_Histogram {
 	
 	public static void main(String[] args) {
 		int[] input = {6, 2, 5, 4, 5, 1, 6 };

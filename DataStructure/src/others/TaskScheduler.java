@@ -1,4 +1,4 @@
-package facebook;
+package others;
 
 import java.util.Arrays;
 
@@ -7,6 +7,7 @@ public class TaskScheduler {
 	public static void main(String[] args) {
 		char[] tasks = {'A', 'B', 'A', 'A', 'B', 'B'};
 		int n = 2;
+		//Explain :  A _ _ A _ _ A
 		int leastInterval = leastInterval(tasks, n);
 		System.out.println("Least Interval : \t" + leastInterval );
 	}

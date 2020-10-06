@@ -5,7 +5,7 @@ import java.util.Stack;
 import javafx.util.Pair;
 import util.Local;
 
-public class AreaRectangleBinaryMatrix {
+public class AreaRectangle_BinaryMatrix {
 
 	public static void main(String[] args) {
 		int[][] input = { { 0, 1, 1, 0 }, { 1, 1, 1, 1 }, { 1, 1, 1, 1 }, { 1, 1, 0, 0 } };
