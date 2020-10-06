@@ -2,11 +2,13 @@ package dp_lcs;
 
 import java.util.Stack;
 
+//Given two strings str1 and str2, find the shortest string that has both str1 and str2 as subsequences.
+//Time Complexity : O(m*n)
+//Space Complexity : O(m*n)
 public class PrintShortestCommonSupersequence {
 	public static void main(String[] args) {
-		String s1 = "abac";
+		String s1 = "aabac";
 		String s2 = "cab";
-		//cabac
 		System.out.println("Result :\t" + getShortestCommonString(s1, s2));
 	}
 

@@ -22,7 +22,6 @@ public class ScrambledString {
 		}
 
 		int n = S1.length();
-
 		if (n == 0) {
 			return true;
 		}
@@ -45,44 +44,6 @@ public class ScrambledString {
 		}
 
 		for (int i = 1; i < n; i++) {
-			
-			/*String swapped1 = S1.substring(0, i).concat("_").concat(S2.substring(0, i));
-			if(map.containsKey(swapped1)) {
-				return map.get(swapped1);
-			}else {
-				map.put(swapped1, isScramble(S1.substring(0, i), S2.substring(0, i), map));
-			}
-	
-			String swapped2 = S1.substring(i, n).concat("_").concat(S2.substring(i, n));
-			if(map.containsKey(swapped2)) {
-				return map.get(swapped2);
-			}else {
-				map.put(swapped2, isScramble(S1.substring(i, n), S2.substring(i, n), map));
-			}
-			
-			if (map.get(swapped1) && map.get(swapped2)) {
-				return true;
-			}
-			
-
-			String nonSwapped1 = S1.substring(n - i, n).concat("_").concat(S2.substring(0, i));
-			if(map.containsKey(nonSwapped1)) {
-				return map.get(nonSwapped1);
-			}else {
-				map.put(nonSwapped1, isScramble(S1.substring(n - i, n), S2.substring(0, i), map));
-			}
-	
-			String nonSwapped2 = S1.substring(0, n - i).concat("_").concat(S2.substring(i, n));
-			if(map.containsKey(nonSwapped2)) {
-				return map.get(nonSwapped2);
-			}else {
-				map.put(nonSwapped2,  isScramble(S1.substring(0, n - i), S2.substring(i, n), map));
-			}
-			
-			if (map.get(nonSwapped1) && map.get(nonSwapped2)) {
-				return true;
-			}*/
-			
 			
 			if (isScramble(S1.substring(0, i), S2.substring(0, i), map)
 					&& isScramble(S1.substring(i, n), S2.substring(i, n), map)) {

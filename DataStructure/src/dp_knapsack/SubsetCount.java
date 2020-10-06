@@ -1,9 +1,13 @@
 package dp_knapsack;
 
+//Count of subsets with sum equal to X
+//Time Complexity : O(m*n)
+//Space Complexity : O(m*n)
+
 public class SubsetCount {
 
 	public static void main(String[] args) {
-		int[] arr = { 5, 1, 5, 11 };
+		int[] arr = { 6, 1, 5, 11, 4, 2 };
 		int weight = 11;
 		System.out.println("Subset Count : \t " + getSubsetCount(arr, weight));
 	}

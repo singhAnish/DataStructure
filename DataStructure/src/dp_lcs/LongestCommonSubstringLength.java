@@ -1,10 +1,14 @@
 package dp_lcs;
 
+import util.Local;
+
+//Time Complexity : O(m*n)
+//Space Complexity : O(m*n)
 public class LongestCommonSubstringLength {
 	public static void main(String[] args) {
 		String s1 = "abcxyzwt";
 		String s2 = "abcmyzwt";
-		System.out.println("Result :\t" + getCount(s1, s2));
+		System.out.println("Longest Common Substring Length :\t" + getCount(s1, s2));
 	}
 
 	private static int getCount(String text1, String text2) {
@@ -33,16 +37,7 @@ public class LongestCommonSubstringLength {
 			}
 		}
 
-		printMatrix(dp);
+		Local.printMatrix(dp);
 		return result;
-	}
-	
-	private static void printMatrix(int[][] matrix) {
-		for (int i = 0; i < matrix.length; i++) {
-			for (int j = 0; j < matrix[i].length; j++) {
-				System.out.print(matrix[i][j] + "\t");
-			}
-			System.out.println("");
-		}
 	}
 }

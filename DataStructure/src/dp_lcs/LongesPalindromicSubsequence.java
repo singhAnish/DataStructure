@@ -1,10 +1,14 @@
 package dp_lcs;
 
+
+//Given a sequence, find the length of the longest palindromic subsequence in it.
+//Time Complexity : O(m*n)
+//Space Complexity : O(m*n)
 public class LongesPalindromicSubsequence {
 
 	public static void main(String[] args) {
-		String s1 = "agbcba";
-		System.out.println("Result :\t" + getCount(s1));
+		String s1 = "agbcbga";
+		System.out.println("Longes Palindromic Subsequence :\t" + getCount(s1));
 	}
 
 	private static int getCount(String text1) {

@@ -2,10 +2,16 @@ package dp_knapsack;
 
 import java.util.Arrays;
 
+import util.Local;
+
+
+
+//Partition a set into two subsets such that the difference of subset sums is minimum
+
 public class MinimumSubsetSum {
 
 	public static void main(String[] args) {
-		int[] input = { 1, 2, 5, 7 };
+		int[] input = { 1, 2, 5, 15 };
 		System.out.println("Min subset Sum : " + minSubsetSum(input));
 
 	}
@@ -41,7 +47,15 @@ public class MinimumSubsetSum {
 				}
 			}
 		}
-
+		
+		
+		/*
+		 * Range of subset will be between 0 to sum. 
+		 * S1+ S2 = Sum
+		 * S2  =  Sum - S1
+		 * Math.abs(S1 - (Sum - S1)) // We require this indirectly
+		*/
+		
 		int[] sumArray = new int[sum / 2 + 1];
 		for (int i = 0; i < sumArray.length; i++) {
 			if (dp[n][i]) {
@@ -50,7 +64,6 @@ public class MinimumSubsetSum {
 				sumArray[i] = -1;
 			}
 		}
-		System.out.println(Arrays.toString(sumArray));
 
 		int mn = Integer.MAX_VALUE;
 		for (int i = 0; i < sumArray.length; i++) {
@@ -58,6 +71,9 @@ public class MinimumSubsetSum {
 				mn = Math.min(mn, sum - 2 * sumArray[i]);
 			}
 		}
+		
+		System.out.println(Arrays.toString(sumArray));
+
 
 		return mn;
 	}

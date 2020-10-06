@@ -22,16 +22,28 @@ public class Local {
 	}
 	
 	
-	public void printMatrix(int[][] input) {
+	public static void printMatrix(int[][] input) {
 		for(int i = 0; i< input.length; i++) {
 			for(int j = 0; j < input[i].length; j++) {
-				System.out.print(input[i][j] + " ");
+				System.out.print(input[i][j] + "\t");
 			}
 			System.out.println(" ");
 		}
 		
 		System.out.println(" ");
 	}
+	
+	public static void printBooleanMatrix(boolean[][] input) {
+		for(int i = 0; i< input.length; i++) {
+			for(int j = 0; j < input[i].length; j++) {
+				System.out.print(input[i][j] + "\t\t");
+			}
+			System.out.println(" ");
+		}
+		
+		System.out.println(" ");
+	}
+	
 	
 	
 	public void printIntegerList(List<Integer> list) { 

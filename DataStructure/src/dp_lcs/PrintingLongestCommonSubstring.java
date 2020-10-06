@@ -2,6 +2,11 @@ package dp_lcs;
 
 import java.util.Stack;
 
+import util.Local;
+
+//Printing Longest Common subString
+//Time Complexity : O(m*n)
+//Space Complexity : O(m*n)
 public class PrintingLongestCommonSubstring {
 	public static void main(String[] args) {
 		String s1 = "sea";
@@ -21,7 +26,6 @@ public class PrintingLongestCommonSubstring {
 		int[][] dp = new int[l1 + 1][l2 + 1];
 
 		int result = 0;
-
 		int m = 0, n = 0;
 
 		for (int i = 0; i <= l1; i++) {
@@ -30,27 +34,22 @@ public class PrintingLongestCommonSubstring {
 					dp[i][j] = 0;
 				} else if (text1.charAt(i - 1) == text2.charAt(j - 1)) {
 					dp[i][j] = 1 + dp[i - 1][j - 1];
+					//result = Math.max(result, dp[i][j]);
+
 					if (dp[i][j] > result) {
 						result = dp[i][j];
 						m = i;
 						n = j;
-					} else {
-
-					}
+					} 
 				} else {
 					dp[i][j] = 0;
 				}
 			}
 		}
-
-		printMatrix(dp);
+		Local.printMatrix(dp);
 		
-		System.out.println("m : \t"+ m + "\t\tn :\t"+n);
-
 		Stack<Character> stack = new Stack<>();
 		while (m > 0 && n > 0) {
-			System.out.println("m : \t"+ m + "\t\tn :\t"+n);
-
 			if (text1.charAt(m - 1) == text2.charAt(n - 1)) {
 				stack.push(text1.charAt(m - 1));
 				m--;
@@ -73,14 +72,5 @@ public class PrintingLongestCommonSubstring {
 			builder.append(stack.pop());
 		}
 		return builder.toString();
-	}
-
-	private static void printMatrix(int[][] matrix) {
-		for (int i = 0; i < matrix.length; i++) {
-			for (int j = 0; j < matrix[i].length; j++) {
-				System.out.print(matrix[i][j] + "\t");
-			}
-			System.out.println("");
-		}
 	}
 }

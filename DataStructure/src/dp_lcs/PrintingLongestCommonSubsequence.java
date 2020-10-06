@@ -2,6 +2,12 @@ package dp_lcs;
 
 import java.util.Stack;
 
+import util.Local;
+
+//Printing Longest Common Subsequence
+//Time Complexity : O(m*n)
+//Space Complexity : O(m*n)
+
 public class PrintingLongestCommonSubsequence {
 	public static void main(String[] args) {
 		String s1 = "anhdasf";
@@ -31,7 +37,7 @@ public class PrintingLongestCommonSubsequence {
 				}
 			}
 		}
-		printMatrix(dp);
+		Local.printMatrix(dp);
 
 		Stack<Character> stack = new Stack<>();
 		while (l1 > 0 || l2 > 0) {
@@ -53,14 +59,5 @@ public class PrintingLongestCommonSubsequence {
 			builder.append(stack.pop());
 		}
 		return builder.toString();
-	}
-
-	private static void printMatrix(int[][] matrix) {
-		for (int i = 0; i < matrix.length; i++) {
-			for (int j = 0; j < matrix[i].length; j++) {
-				System.out.print(matrix[i][j] + "\t");
-			}
-			System.out.println("");
-		}
 	}
 }

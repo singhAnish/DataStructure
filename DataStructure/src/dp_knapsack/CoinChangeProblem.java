@@ -1,21 +1,17 @@
 package dp_knapsack;
 
-import java.util.Arrays;
+import util.Local;
 
+
+//Problem Statement : how many ways can we make the change? The order of coins doesn’t matter.
+//Time Complexity : O(m*n)
+//Space Complexity : O(m*n)
 public class CoinChangeProblem {
 
 	public static void main(String[] args) {
 		int[] coins = { 1, 2, 3 };
 		int sum = 5;
-		System.out.println("Result : " + getCoinsCount(coins, sum));
-		
-		
-		int[] dp = new int[sum+1];
-		Arrays.fill(dp, -1);
-		dp[0] = 0;
-		System.out.println(minCoins(sum, coins, dp));
-		System.out.println(Arrays.toString(dp));
-		
+		System.out.println("Result : " + getCoinsCount(coins, sum));	
 	}
 
 	private static int getCoinsCount(int[] coins, int amount) {
@@ -38,28 +34,8 @@ public class CoinChangeProblem {
 				}
 			}
 		}
+		
+		Local.printMatrix(dp);
 		return dp[coins.length][amount];
 	}
-
-	private static int minCoins(int sum, int[] coins, int dp[]) {
-		if (sum == 0)
-			return 0;
-
-		int ans = Integer.MAX_VALUE;
-		for (int i = 0; i < coins.length; i++) {
-			if (sum - coins[i] >= 0) {
-				int subAns = 0;
-				if (dp[sum - coins[i]] != -1) {
-					subAns = dp[sum - coins[i]];
-				} else {
-					subAns = minCoins(sum - coins[i], coins, dp);
-				}
-				if (subAns != Integer.MAX_VALUE && subAns + 1 < ans) {
-					ans = subAns + 1;
-				}
-			}
-		}
-		return dp[sum] = ans;
-	}
-
 }

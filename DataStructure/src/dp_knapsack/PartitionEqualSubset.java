@@ -1,11 +1,14 @@
 package dp_knapsack;
 
-public class PartitionEqualSubset {
-	public static void main(String[] args) {
 
+//find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.
+//Time Complexity : O(m*n)
+//Space Complexity : O(m*n)
+public class PartitionEqualSubset {
+	
+	public static void main(String[] args) {
 		int arr[] = { 1, 5, 11, 5 };
 		System.out.println("Can be divided into two " + findPartition(arr));
-
 	}
 
 	private static boolean findPartition(int nums[]) {

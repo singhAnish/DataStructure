@@ -1,15 +1,15 @@
 package dp_knapsack;
 
-import java.util.Arrays;
+//Find out how many ways to assign symbols to make sum of integers equal to target S.
+//Time Complexity : O(m*n)
+//Space Complexity : O(m*n)
 
 public class TargetSum {
 
 	public static void main(String[] args) {
 		int[] input = { 0, 0, 0, 0, 0, 0, 0, 0, 1 };
 		int sum = 1;
-
 		System.out.println("Output : \t" + findTargetSumWays(input, sum));
-
 	}
 
 	public static int findTargetSumWays(int[] nums, int S) {

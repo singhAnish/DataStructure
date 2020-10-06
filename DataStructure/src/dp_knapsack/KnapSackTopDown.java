@@ -1,7 +1,10 @@
 package dp_knapsack;
 
-import java.util.Arrays;
+import util.Local;
 
+//Given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack
+//Time Complexity : O(m*n)
+//Space Complexity : O(m*n)
 public class KnapSackTopDown {
 
 	public static void main(String[] args) {
@@ -11,7 +14,6 @@ public class KnapSackTopDown {
 		int capacity = 6;
 
 		 System.out.println("Output : \t" + getMaxResult(values, weight, capacity));
-
 	}
 
 	private static int getMaxResult(int[] values, int[] weight, int capacity) {
@@ -30,18 +32,7 @@ public class KnapSackTopDown {
 				}
 			}
 		}
-		printMatrix(memo);
+		Local.printMatrix(memo);
 		return memo[n][capacity];
 	}
-	
-	private static void printMatrix(int[][] matrix) {
-		for (int i = 0; i < matrix.length; i++) {
-			for (int j = 0; j < matrix[i].length; j++) {
-				System.out.print(matrix[i][j] + "\t");
-			}
-			System.out.println("");
-		}
-	}
-
-
 }

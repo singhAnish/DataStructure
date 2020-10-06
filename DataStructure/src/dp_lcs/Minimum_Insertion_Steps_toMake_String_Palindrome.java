@@ -1,6 +1,9 @@
 package dp_lcs;
 
-public class MinimumInsertionStepstoMakeStringPalindrome {
+//Minimum number of deletions to make a string Palindrome
+//Time Complexity : O(m*n)
+//Space Complexity : O(m*n)
+public class Minimum_Insertion_Steps_toMake_String_Palindrome {
 	public static void main(String[] args) {
 		String s1 = "agbcba";
 		System.out.println("Result :\t" + (s1.length() - getCount(s1)));
