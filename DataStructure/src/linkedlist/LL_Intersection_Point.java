@@ -1,33 +1,19 @@
 package linkedlist;
 
-import linkedlist.MyLinkedList.Node;
-
 // Time complexity : O(m+n)
 // Space complexity : O(1)
 public class LL_Intersection_Point {
 
-	public static void main(String[] args) {
-		// creating first linked list
-		MyLinkedList list = new MyLinkedList();
-		list.head = new Node(3);
-		list.head.next = new Node(6);
-		list.head.next.next = new Node(9);
-		list.head.next.next.next = new Node(15);
-		list.head.next.next.next.next = new Node(30);
+	public static void main(String[] args) {		
+		BaseLinkedList baseLinkedList = new BaseLinkedList();
+		ListNode<Integer> head1 = baseLinkedList.createLinkedList();
+		ListNode<Integer> head2 = baseLinkedList.createLinkedList();
 
-		// creating second linked list
-		MyLinkedList list2 = new MyLinkedList();
-		list2.head = new Node(10);
-		list2.head.next = new Node(15);
-		list2.head.next.next = new Node(30);
-
-		System.out.println("Intersection point is " + getIntersectionNode(list.head, list2.head));
-		System.out.println("The node of intersection is " + getNode(list.head, list2.head));
-
+		System.out.println("Intersection point is :  \t" + getNode(head1, head2));
 	}
 
 
-	private static int getNode(Node head1, Node head2) {
+	private static int getNode(ListNode<Integer> head1, ListNode<Integer> head2) {
 		int c1 = getCount(head1);
 		int c2 = getCount(head2);
 		if (c1 > c2) {
@@ -38,8 +24,8 @@ public class LL_Intersection_Point {
 	}
 
 	
-	private static int getCount(Node node) {
-		Node current = node;
+	private static int getCount(ListNode<Integer> node) {
+		ListNode<Integer> current = node;
 		int count = 0;
 
 		while (current != null) {
@@ -49,10 +35,10 @@ public class LL_Intersection_Point {
 		return count;
 	}
 
-	private static int getIntesectionNode(int d, Node node1, Node node2) {
+	private static int getIntesectionNode(int d, ListNode<Integer> node1, ListNode<Integer> node2) {
 
-		Node current1 = node1;
-		Node current2 = node2;
+		ListNode<Integer> current1 = node1;
+		ListNode<Integer> current2 = node2;
 		for (int i = 0; i < d; i++) {
 			if (current1 == null) {
 				return -1;
@@ -60,8 +46,8 @@ public class LL_Intersection_Point {
 			current1 = current1.next;
 		}
 		while (current1 != null && current2 != null) {
-			if (current1.data == current2.data) {
-				return (int) current1.data;
+			if (current1.value == current2.value) {
+				return (int) current1.value;
 			}
 			current1 = current1.next;
 			current2 = current2.next;
@@ -73,12 +59,12 @@ public class LL_Intersection_Point {
 	
 	
 	//2nd Way
-	private static Node getIntersectionNode(Node headA, Node headB) {
-		Node current1 = headA, current2 = headB;
+	/*private static ListNode<Integer> getIntersectionNode(ListNode<Integer> headA, ListNode<Integer> headB) {
+		ListNode<Integer> current1 = headA, current2 = headB;
 		while (current1 != current2) {
 			current1 = (current1 != null) ? current1.next : headB;
 			current2 = (current2 != null) ? current2.next : headA;
 		}
 		return current1;
-	}
+	}*/
 }
