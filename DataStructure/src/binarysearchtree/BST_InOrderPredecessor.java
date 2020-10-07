@@ -1,7 +1,5 @@
 package binarysearchtree;
 
-import java.util.Scanner;
-
 import binarytree.BaseTree;
 import binarytree.Node;
 
