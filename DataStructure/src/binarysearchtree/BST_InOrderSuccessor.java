@@ -30,7 +30,7 @@ public class BST_InOrderSuccessor {
 				node = node.right;
 			} else {
 				if (node.right != null) {
-					inorderSuccessor = getSuccessor(node);
+					inorderSuccessor = getSuccessor(node.right);
 				}
 				break;
 			}
@@ -44,7 +44,7 @@ public class BST_InOrderSuccessor {
 			return null;
 		}
 
-		Node<Integer> temp = node.right;
+		Node<Integer> temp = node;
 		while (temp.left != null) {
 			temp = temp.left;
 		}

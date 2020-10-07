@@ -22,7 +22,7 @@ public class BST_Validate {
 	private static boolean isValid(Node<Integer> node, Integer max, Integer min) {
 		if (node == null) {
 			return true;
-		} else if ((min != null && node.value <= min) || (max != null && node.value >= max)) {
+		} else if ((max != null && node.value >= max) || (min != null && node.value <= min)) {
 			return false;
 		} else {
 			return isValid(node.left, node.value, min) && isValid(node.right, max, node.value);
