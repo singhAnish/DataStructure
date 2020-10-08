@@ -12,7 +12,6 @@ public class AutoCompleteWithTrie {
 			}	
 	  }
 	 
-	 
 	 private static Trie getTrie() {
          Trie trie = new Trie();    
          
