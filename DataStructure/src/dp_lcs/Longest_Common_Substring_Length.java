@@ -4,7 +4,7 @@ import util.Local;
 
 //Time Complexity : O(m*n)
 //Space Complexity : O(m*n)
-public class LongestCommonSubstringLength {
+public class Longest_Common_Substring_Length {
 	public static void main(String[] args) {
 		String s1 = "abcxyzwt";
 		String s2 = "abcmyzwt";

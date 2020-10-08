@@ -12,7 +12,7 @@ public class MinimumCoinSum {
 
 	public static void main(String[] args) {
 		int[] coins = { 1, 2, 3, 4 };
-		int sum = 5;
+		int sum = 11;
 
 		// Top Down solution
 		System.out.println("Result : \t" + getMinCoinCount(coins, sum));

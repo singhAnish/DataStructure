@@ -21,9 +21,9 @@ public class BST_DeleteNode {
 			return null;
 		}
 		
-		if(root.value < key) {
+		if(key > root.value) {
 			root.right = deleteNode(root.right, key);
-		}else if(root.value > key) {
+		}else if(key < root.value) {
 			root.left = deleteNode(root.left, key);
 		}else {
 			if(root.left != null && root.right != null) {

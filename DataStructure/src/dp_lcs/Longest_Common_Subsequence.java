@@ -9,7 +9,7 @@ For example, “abc”, “abg”, “bdf”, “aeg”, ‘”acefg”, .. etc 
 //Time Complexity : O(2^n)
 //Space Complexity : O(m*n)
 
-public class LongestCommonSubsequence {
+public class Longest_Common_Subsequence {
 
 	public static void main(String[] args) {
 		String s1 = "anhdasf";

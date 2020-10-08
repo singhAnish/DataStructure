@@ -7,9 +7,9 @@ package dp_knapsack;
 public class SubsetCount {
 
 	public static void main(String[] args) {
-		int[] arr = { 6, 1, 5, 11, 4, 2 };
+		int[] nums = { 6, 1, 5, 11, 4, 2 };
 		int weight = 11;
-		System.out.println("Subset Count : \t " + getSubsetCount(arr, weight));
+		System.out.println("Subset Count : \t " + getSubsetCount(nums, weight));
 	}
 
 	private static int getSubsetCount(int[] nums, int w) {
